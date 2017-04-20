@@ -58,9 +58,9 @@ function Queue() {
   var self = this;
   var constructorArguments = arguments;
 
-  console.log('test fork OK');
+    logger.debug('Test winston logging');
 
-  var error;
+    var error;
   self.numWorkers = DEFAULT_NUM_WORKERS;
   self.sanitize = DEFAULT_SANITIZE;
   self.suppressStack = DEFAULT_SUPPRESS_STACK;
