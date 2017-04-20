@@ -2,7 +2,7 @@
 .idea
 *.iml
 
-dist/
+#dist/
 coverage/
 node_modules/
 
