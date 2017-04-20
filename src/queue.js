@@ -58,6 +58,8 @@ function Queue() {
   var self = this;
   var constructorArguments = arguments;
 
+  console.log('test fork OK');
+
   var error;
   self.numWorkers = DEFAULT_NUM_WORKERS;
   self.sanitize = DEFAULT_SANITIZE;
