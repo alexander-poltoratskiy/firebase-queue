@@ -10,7 +10,16 @@
 
 var _ = require('lodash');
 var RSVP = require('rsvp');
-var logger = require('winston');
+
+var winston = require('winston');
+
+var logger = new (winston.Logger)({
+    transports: [
+        new (winston.transports.Console)({level: 'silly'}),
+    ]
+});
+
+
 var QueueWorker = require('./lib/queue_worker.js');
 
 var DEFAULT_NUM_WORKERS = 1;
@@ -58,7 +67,7 @@ function Queue() {
   var self = this;
   var constructorArguments = arguments;
 
-  console.log('test fork OK');
+    logger.info('Queue constructor called()');
 
   var error;
   self.numWorkers = DEFAULT_NUM_WORKERS;
